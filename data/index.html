@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LED Control</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+  <link href='css/style.css' rel='stylesheet' type='text/css'>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="144x144"  href="/favicon-144x144.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#00878f">
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'>
+  <script src="WebSocket.js" type="text/javascript"></script>
+</head>
+
+<body>
+<center>
+  <header>
+    <h1>TempControll by MuszekMaster</h1>
+  </header>
+  <div id="temp">
+
+
+
+    <img src="https://1001freedownloads.s3.amazonaws.com/vector/thumb/65909/to-92.png" alt="to-92" style="width:25px;height:25px"><p style="display:inline; font-size: large" id="tempParagraph0"></p>&#8451;<br>
+    <img src="https://1001freedownloads.s3.amazonaws.com/vector/thumb/65909/to-92.png" alt="to-92" style="width:25px;height:25px"><p style="display:inline; font-size: large" id="tempParagraph1"></p>&#8451;<br>
+  </div>
+  <div>
+      <p style="display:inline; font-size: xx-large; color: darkorange">TEMP:</p><p style="display:inline; font-size: xx-large; color: darkorange" id="temperatureText">22</p><p style="display:inline; font-size: xx-large; color: darkorange">&#8451;</p><br>
+    <div class="slide">
+      <table>
+      <tr>
+        <td style="width:14.4px; text-align: right">Temperature: </td>
+        <td><input class="slide" id="tempSlider" style="width:100%;height:10%" type="range" min="18" max="24" step="0.1" oninput="changeTemp()" onchange="sendTemp();" value="21.5"></td>
+      </tr>
+        <tr>
+            <td style="width:14.4px; text-align: right">Speed: </td>
+            <td><input class="slide" id="speedSlider" type="range" min="353" max="1023" step="10" onchange="sendSpeed();" value="1023"></td>
+        </tr>
+    </table>
+    </div>
+    <p style="margin:8px 0px">
+      <button id="openBtn" class="button" style="background-color:#5fff5c" onclick="openWindow();">Open</button>
+        <button id="closeBtn" class="button" style="background-color:#ff5546" onclick="closeWindow();">Close</button>
+        <button id="stopBtn" class="button" style="background-color:#949290" onclick="stopWindow();">Stop</button>
+    </p>
+  </div>
+</center>
+</body>
+</html>
